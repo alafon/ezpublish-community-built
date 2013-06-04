@@ -1,0 +1,48 @@
+language: php
+
+php:
+  - 5.3.3
+  - 5.3
+  - 5.4
+  - 5.5
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - DB_NAME="testdb"
+  matrix:
+    - DB="mysql" DB_USER="root" TIMEZONE="Asia/Calcutta"
+    - DB="mysql" DB_USER="root" TIMEZONE="America/New_York"
+    - DB="postgresql" DB_USER="postgres" TIMEZONE="Asia/Calcutta"
+
+matrix:
+  allow_failures:
+    - php: 5.5
+  exclude:
+    - php: 5.3
+      env: DB="mysql" DB_USER="root" TIMEZONE="America/New_York"
+    - php: 5.4
+      env: DB="mysql" DB_USER="root" TIMEZONE="Asia/Calcutta"
+    - php: 5.4
+      env: DB="postgres" DB_USER="postgres" TIMEZONE="Asia/Calcutta"
+    - php: 5.5
+      env: DB="mysql" DB_USER="root" TIMEZONE="America/New_York"
+
+before_script:
+ - if [ $DB == "mysql" ]; then mysql -e "CREATE DATABASE IF NOT EXISTS $DB_NAME;" -u$DB_USER ; fi
+ - if [ $DB == "postgresql" ]; then psql -c "CREATE DATABASE $DB_NAME;" -U $DB_USER ; psql -c "CREATE EXTENSION pgcrypto;" -U $DB_USER $DB_NAME ; fi
+ - pear channel-discover components.ez.no
+ - pear install -a ezc/eZComponents
+ - php bin/php/ezpgenerateautoloads.php -s -e
+
+script:
+  - php -d date.timezone=$TIMEZONE tests/runtests.php --dsn "$DB://${DB_USER}@127.0.0.1/$DB_NAME"
+
+notification:
+  email: false
+
+git:
+  depth: 30

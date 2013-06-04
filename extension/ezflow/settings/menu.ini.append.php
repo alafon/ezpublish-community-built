@@ -1,6 +1,0 @@
-<?php /*
-
-[MenuContentSettings]
-ExtraMenuSubitemsCheck=disabled
-
-*/ ?>

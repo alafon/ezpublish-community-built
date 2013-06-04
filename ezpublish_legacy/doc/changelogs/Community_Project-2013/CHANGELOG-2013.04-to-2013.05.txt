@@ -1,0 +1,172 @@
+Bugfixes
+========
+eZ Publish Kernel & APIs
+
+- EZP-20659: Server error when applying watermark in image editor
+- EZP-20757: %secret% key should be generated at install/update
+- EZP-20783: csrf_protection.field_name.value breaks ezxformtoken in AJAX calls
+- EZP-20877: Remove useless use stament causing PHP warning
+
+eZ Publish Legacy Stack (LS)
+
+- EZP-18195: $result.object is not correctly created (part 2)
+- EZP-19608: Wrong documentation while running the installation of eZ Publish
+- EZP-20145: Templates not cleared with bin/php/ezcache.php when using SharedCompiledTemplatesDir
+- EZP-20287: Error code in legacy not sent to the symfony stack
+- EZP-20455: eZUser::isLoggedIn does not correctly check user's state
+- EZP-20630: PHP notice when defining a constant in config.php
+- EZP-20687: added fiximagesoutsidevardir.php update script
+- EZP-20689: Missing DB update scripts on 5.x branches - Added script 4.6 to 4.7 from the stable-4.7 branch
+- EZP-20699: Running ezcache with purge in symfony cli genates a php fatal error
+- EZP-20718: autoload.php processed/included more than once
+- EZP-20766: Wrong default value for CLUSTER_HEADER_X_POWERED_BY
+- EZP-20774: Broken link-back in PHP compatibility check error page
+- EZP-20787: Improve update script fiximagesoutsidevardir.php
+- EZP-20845: Wrong working directory when using legacy kernel at the end of the request
+- EZP-20852: Regression in unit test on postgres on eZContentObjectTreeNodeRegression::testIssue16737
+
+eZ Publish 5
+
+- EZP-19971: Forms from 5.x to LS stack not supported by ezformtoken
+- EZP-20287: Error code in legacy not sent to the symfony stack (cherry picked from commit ff74c66cd71082ac0c41a957ef2e8823fd314fb7)
+- EZP-20659: Server error when applying watermark in image editor
+- EZP-20696: REST v2: Not possible to create content with an ezbinaryfile
+- EZP-20722: eZRest v2: Default values for FieldSettings not set when creating contenttypes
+- EZP-20724: Error when creating a content without filling an ezdatetime field
+- EZP-20743: SQL syntax error in EzcDatabase\removePolicyLimitations() with PostgreSQL
+- EZP-20747: unAssignUserFromUserGroup should throw BadState when 1 group left
+- EZP-20748: Setup wizard uses the default VarDir to create files from packages
+- EZP-20750: SQL syntax errors in EzcDatabase Content Gateway with PostgreSQL
+- EZP-20755: Names are supposed to have a default limit of 150 characters
+- EZP-20757: %secret% key should be generated at install/update
+- EZP-20759: eznode_assignment table not cleaned between tests
+- EZP-20762: SQL syntax errors in Legacy Gateway of XmlTextStorage with PostgreSQL
+- EZP-20764: PostgreSQL fails when out-of-range values are used in integer context
+- EZP-20767: PostgreSQL fails with binary 'and' operator's result used as a boolean value
+- EZP-20768: Searching with API using a Field criterion leads to a fatal error
+- EZP-20769: hardcoded path to image variants in REST
+- EZP-20770: Using "like" operator in Field criterion throws an exception
+- EZP-20785: only validate CSRF token when a session is running
+- EZP-20791: PHP Fatal error: Method eZ\Publish\Core\FieldType\XmlText\Value::__toString() must return a string value
+- EZP-20817: Link generation with UrlAliasRouter not working correctly with multisite configuration
+- EZP-20844: Anonymous group needs to have access to section/view policy
+- EZP-20859: Twig exception trying to generate path to legacy module with no views
+- EZP-20867: Error when creating Image fieldtype without validator configuration
+
+Enhancements
+============
+eZ Publish Kernel & APIs
+
+- EZP-20821: Make it possible to configure the front controller without editing it
+- EZP-20841: Provide a router script to use with PHP 5.4 built-in server
+
+eZ Publish Legacy Stack (LS)
+
+- EZP-20851: Setup Travis tests to also test prostgres for ezpublish-kernel/legacy
+
+
+
+
+Pull requests
+=============
+eZ Publish Kernel & APIs
+
+- 28: from alafon/install-procedure
+- 46: from ezsystems/composer.json-redux
+- 47: from ezsystems/ezp_19971
+- 48: from pspanja/fix-EZP-20684
+- 51: from patrickallaert/EZP-20821
+- 52: from ezsystems/ezrouter
+- 54: from patrickallaert/RemoveExceptionForSetupDetection
+- 56: from pedroresende/EZP20877
+- 57: from ezsystems/update_deps_assetic_stable
+
+eZ Publish Legacy Stack (LS)
+
+- 574: from ezsystems/ezsetupRedirectIssue
+- 606: from patrickallaert/EZP-20630
+- 607: from patrickallaert/EZP-20718
+- 608: from ezsystems/ezp-20287_http_error_code
+- 610: from pedroresende/EZP-19608
+- 611: from patrickallaert/EZP-20699
+- 619: from nfrp/broken_links_to_ezno
+- 622: from pspanja/fix-EZP-20673-upgrade-db-check
+- 627: from MLoureiro/master
+- 628: from patrickallaert/EZP-18195
+- 629: from patrickallaert/timezone
+- 630: from ezsystems/chdirfix
+- 632: from patrickallaert/EZP-18195
+- 633: from patrickallaert/EZP-20851
+- 634: from harmstyler/patch-3
+- 635: from patrickallaert/RemovedUnusedVariable
+- 636: from patrickallaert/EZP-20145
+
+eZ Publish 5
+
+- 271: from ezsystems/fix-EZP-20539-editor-permissions-2
+- 282: from patrickallaert/more-fine-grained-view-controller
+- 285: from ThinkCreative/location_priority_filtering
+- 292: from ezsystems/limitation_validation
+- 300: from ezsystems/fix-EZP-20684-update-user
+- 304: from patrickallaert/EZP-20743
+- 305: from ezsystems/fix-EZP-20728-move-location-reparent
+- 307: from ezsystems/fix-EZP-20719-php-intl-twig
+- 309: from patrickallaert/EZP-20750
+- 310: from patrickallaert/EZP-20755
+- 311: from patrickallaert/EZP-20759
+- 312: from patrickallaert/MissingColumnInGroupBy
+- 313: from patrickallaert/MissingBindValueTypeParameter
+- 315: from patrickallaert/MissingSequenceReset
+- 316: from patrickallaert/EZP-20762
+- 318: from patrickallaert/EZP-20764
+- 319: from patrickallaert/EZP-20767
+- 324: from ezsystems/shared_testcase_fixture
+- 325: from ezsystems/unassign_usergroup_badstate
+- 328: from ezsystems/fix-create-session-http-status
+- 329: from ezsystems/ezp_20757
+- 330: from patrickallaert/FixingUnitTestDependingOnDatabaseResultOrder
+- 333: from ezsystems/legacy_slot_memory_leak
+- 334: from ezsystems/fix-pathidentificationstring-cache-handler
+- 335: from ezsystems/fix-EZP-20754-rest-delete-ezimage
+- 336: from ezsystems/fix-EZP-20606-rest-error-message
+- 337: from patrickallaert/EZP-20791
+- 338: from patrickallaert/EZP-20722
+- 339: from krbl/master
+- 341: from ezsystems/fix-EZP-20799-ezpage-unexistent-method
+- 342: from ezsystems/fixLegacyProviders
+- 343: from ezsystems/ezp_20805
+- 345: from ezsystems/fix-EZP-20669-rest-ezpage-format
+- 346: from ezsystems/regression-EZP-20805
+- 347: from ezsystems/fixiolazyloading
+- 348: from ezsystems/ezp_20817
+- 349: from ezsystems/fix-EZP-20812-offset-exception
+- 353: from patrickallaert/timezone
+- 354: from ezsystems/fix-rest-page-hash-null
+- 355: from ezsystems/fix-create-custom-location-alias
+- 358: from ezsystems/cache_ttl_default
+- 359: from ezsystems/fix-EZP-20850-create-content-language-validation
+- 361: from fdob/patch-1
+- 362: from ezsystems/fix-EZP-20866-draft-relations
+- 363: from ezsystems/ezp_20844
+- 366: from ezsystems/fix-EZP-20848-pdo-exception-2
+- 367: from patrickallaert/SetupFactory-Legacy-improvements
+
+Miscellaneous
+=============
+eZ Publish Kernel & APIs
+
+- Update dependencies & change to use assetic 1.1 stable
+- Removed: usage of Exception to detect if setup wizard is to be launched
+- Fixed inline comment in ezrouter.php
+- Moved ezrouter.php to bin/
+- Revert "Fix EZP-20784: csrf_protection.field_name.value breaks ezxformtoken in AJAX calls"
+- Use REST path prefix configured in REST bundle
+- EZP-19971 - CSRF protection should be activated by default
+- EZP-2059 - Refactored composer.json
+
+
+eZ Publish 5
+
+- EZP-20686 - Moved SiteAccess injection in UrlAliasGenerator from UrlAliasRouter to SiteAccessListener, to be always correctly injected
+- add "location priority" filtering capability
+- Changed: small refactoring of the default ViewController for easier reuse

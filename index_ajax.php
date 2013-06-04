@@ -1,1 +1,0 @@
-extension/ezjscore/index_ajax.php
