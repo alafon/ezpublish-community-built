@@ -15,6 +15,15 @@ ezpublish_legacy/support/ezlupdate-qt4.5/ezlupdate/Makefile
 ezpublish_legacy/support/ezlupdate-qt4.5/ezlupdate/moc
 ezpublish_legacy/support/ezlupdate-qt4.5/ezlupdate/obj
 vendor/
+web/bundles/
+web/css/
+web/design
+web/extension
+web/index_cluster.php
+web/index_rest.php
+web/js/
+web/share
+web/var
 *.DS_Store
 ._*
 .project
