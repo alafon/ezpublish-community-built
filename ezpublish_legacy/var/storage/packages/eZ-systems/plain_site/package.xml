@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="3.8.0"
+         development="false"
+         is_active="true"
+         install_type="import">
+  <name>plain_site</name>
+  <summary>Plain site</summary>
+  <description>Stripped install. Contains no special toolbar or menu choices</description>
+  <vendor>eZ systems</vendor>
+  <type value="site" />
+  <ezpublish>
+    <version>3.8.0</version>
+    <named-version>3.8</named-version>
+  </ezpublish>
+  <maintainers>
+    <maintainer>
+      <name>Administrator User</name>
+      <email>nospam@ez.no</email>
+      <role>lead</role>
+    </maintainer>
+  </maintainers>
+  <packaging>
+    <timestamp>1135600234</timestamp>
+    <host>localhost:8085</host>
+  </packaging>
+  <documents>
+    <document mime-type="text/plain"
+              name="LICENCE" />
+  </documents>
+  <changelog>
+    <entry person="Administrator User"
+           email="nospam@ez.no"
+           release="1">
+      <change>Creation of package.</change>
+    </entry>
+  </changelog>
+  <simple-files />
+  <files>
+    <collection name="default">
+      <file-list type="thumbnail"
+                 variable-name="thumbnail">
+        <file name="thumbnail.png"
+              md5sum="01ba8f7e2dd0368bfaeaa31d8441a8e8" />
+      </file-list>
+    </collection>
+  </files>
+  <version>
+    <number>1.1</number>
+    <release>2</release>
+  </version>
+  <licence>GPL</licence>
+  <state>stable</state>
+  <dependencies>
+    <provides />
+    <requires />
+    <obsoletes />
+    <conflicts />
+  </dependencies>
+  <settings>
+    <settings-file filename='ini-site.php'/>
+    <settings-file filename='ini-admin.php'/>
+    <settings-file filename='ini-common.php'/>
+    <settings-file filename='roles.php'/>
+    <settings-file filename='preferences.php'/>
+  </settings>
+  <install/>
+  <uninstall/>
+</package>
